@@ -8,6 +8,8 @@ import Signup from './pages/authentication/Signup/Signup';
 import About from './pages/About/About';
 import Checkout from './pages/home/Checkout/Checkout';
 import Footer from './pages/shared/Footer/Footer';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Blog from './pages/Blog/Blog';
 
 function App() {
   return (
@@ -19,7 +21,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/about' element={<About />} />
-        <Route path='/blog' element={<About />} />
+        <Route path='/blog' element={<Blog />} />
         <Route path='/checkout' element={<Checkout />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
