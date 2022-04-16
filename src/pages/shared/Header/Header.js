@@ -4,7 +4,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase/firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
-
+import { CgLogIn, CgLogOut } from 'react-icons/cg';
 
 const Header = () => {
     const [user] = useAuthState(auth);
@@ -14,7 +14,7 @@ const Header = () => {
     };
     return (
         <>
-            <Navbar bg="primary" variant="dark" sticky="top" className='mb-4' expand="lg">
+            <Navbar bg="primary" variant="dark" sticky="top" expand="lg">
                 <Container>
                     <Navbar.Brand as={Link} className='fw-bold' to='/home'>
                         IP-BD-Doctor
@@ -27,9 +27,9 @@ const Header = () => {
                             <Nav.Link as={Link} className='mx-2 fw-bold' to='/blog'>Blog</Nav.Link>
                             {
                                 user ?
-                                    <button onClick={handleLogout} className='btn btn-danger fw-bold'>LogOut</button>
+                                    <button onClick={handleLogout} className='btn btn-danger fw-bold'>LogOut <CgLogOut className='text-light' fontSize="1.5em" /></button>
                                     : (<>
-                                        <button onClick={() => navigate('/login')} className='btn btn-light text-primary fw-bold'>Login</button>
+                                        <button onClick={() => navigate('/login')} className='btn btn-light text-primary fw-bold'>Login <CgLogIn className='text-primary' fontSize="1.5em" /></button>
                                     </>)
                             }
                         </Nav>

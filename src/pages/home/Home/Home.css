@@ -1,0 +1,20 @@
+.header-container {
+    background-image: url('../../../Images/bgimg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    /* color: white; */
+}
+
+.detail h1 {
+    font-size: 3rem;
+}
+
+@media only screen and (max-width: 800px) {
+    .detail {
+        width: 100%;
+        text-align: center;
+    }
+
+}
