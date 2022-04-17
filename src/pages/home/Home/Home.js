@@ -1,13 +1,13 @@
 import React from 'react';
 import './Home.css';
-import doctor from '../../../Images/doctor.png';
 import { BiDownArrowAlt } from 'react-icons/bi';
+import Services from '../Services/Services';
 
 const Home = () => {
     return (
-        <div className='header-container'>
-            <header>
-                <div className='container d-flex align-items-center' style={{ height: '100vh' }}>
+        <div>
+            <header className='header-container'>
+                <div className='header-text container d-flex align-items-center'>
                     <div className='detail'>
                         <h1>
                             Hi! my name is Dr. Zahangir
@@ -15,10 +15,14 @@ const Home = () => {
                         <h1>
                             I am a Doctor.
                         </h1>
-                        <button className='btn btn-primary mt-5 px-4 py-2'>About Me <BiDownArrowAlt fontSize="1.5em" /></button>
+
+                        <a href="#services">
+                            <button className='btn btn-primary mt-5 px-4 py-2'>My Services<BiDownArrowAlt fontSize="1.5em" /></button>
+                        </a>
                     </div>
                 </div>
             </header>
+            <Services />
         </div>
     );
 };

@@ -7,6 +7,10 @@
     /* color: white; */
 }
 
+.header-container .header-text {
+    height: 100vh;
+}
+
 .detail h1 {
     font-size: 3rem;
 }

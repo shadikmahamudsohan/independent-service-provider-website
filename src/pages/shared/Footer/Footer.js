@@ -6,10 +6,10 @@ const Footer = () => {
     const today = new Date();
     const year = today.getFullYear();
     return (
-        <footer className="page-footer bg-primary text-light font-small blue pt-4 mt-5">
+        <footer className="bg-primary text-light font-small pt-4">
             <div className="container ">
                 <div className="row">
-                    <div className="col-md-6 mt-3">
+                    <div className="col-12 col-md-6">
                         <h5 className="text-uppercase">Contact With Us</h5>
                         <p>My pharmacy is located in Green Rd Dhaka 1215</p>
                         <div className='d-flex'>
@@ -19,9 +19,8 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <hr className="w-100 pb-0" />
 
-                    <div className="col-md-6 mb-md-0 mb-3">
+                    <div className="col-12 col-md-6">
                         <h5>Numbers</h5>
                         <div>
                             <p className='mb-3'>Mobile Number: 017********</p>
@@ -30,13 +29,14 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
+            <hr className="w-100 pb-0" />
 
-            <div className="footer-copyright py-3 d-flex justify-content-center">
+            < div className="footer-copyright py-3 d-flex justify-content-center" >
                 <p className='me-1'>&copy; {year} Copyright:</p>
                 <a className='text-white' href="https://mdbootstrap.com/">Independent-BD-Doctor.com</a>
-            </div>
+            </div >
 
-        </footer>
+        </footer >
     );
 };
 
