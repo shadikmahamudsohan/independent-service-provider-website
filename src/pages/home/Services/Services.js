@@ -7,9 +7,9 @@ import Service from '../Service/Service';
 
 const Services = () => {
     const services = [
-        { id: 1, name: 'service 1', description: 'This is our service 1', img: service1, price: 75 },
-        { id: 2, name: 'service 2', description: 'This is our service 2', img: service2, price: 125 },
-        { id: 3, name: 'service 3', description: 'This is our service 3', img: service3, price: 50 },
+        { id: 1, name: 'LABOLATORY TESTS', description: "A medical procedure that involves testing a sample of blood, urine, or other substance from the body.", img: service1, price: 75 },
+        { id: 2, name: 'ECG TESTS', description: "An electrocardiogram (ECG) is a simple test that can be used to check your heart's rhythm and activity.", img: service2, price: 125 },
+        { id: 3, name: 'PHYSICAL EXAMINATION', description: 'A physical examination is a routine test your primary care provider (PCP) performs to check your overall health', img: service3, price: 50 },
     ];
     return (
         <section id='services' className='my-5 container'>
