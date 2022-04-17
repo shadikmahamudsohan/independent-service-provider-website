@@ -1,10 +1,11 @@
 import React, { useRef, useState } from 'react';
-import { Button, Form, Spinner } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase/firebase.init';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import LoadingSpinner from '../../shared/LoadingSpinner/LoadingSpinner';
 
 const Signup = () => {
     const [validated, setValidated] = useState(false);
@@ -21,15 +22,12 @@ const Signup = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
     let navigate = useNavigate();
     let location = useLocation();
-    let from = location.state?.from?.pathname || "/";
     if (loading) {
-        return (
-            <div className='my-5 d-block mx-auto'>
-                <Spinner animation="border" className='d-block mx-auto' role="status">
-                    <span className="visually-hidden">Loading...</span>
-                </Spinner>
-            </div>
-        );
+        <LoadingSpinner />;
+    }
+
+    if (user) {
+        toast("Account Created");
     }
 
     const handleSignup = (event) => {
@@ -46,18 +44,12 @@ const Signup = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         const confirmPassword = confirmPasswordRef.current.value;
-        console.log(password, confirmPassword);
         if (password === confirmPassword) {
             createUserWithEmailAndPassword(email, password);
+            setErrorText('');
         } else {
             setErrorText('wrong confirm password');
         }
-        if (user) {
-            navigate(from, { replace: true });
-        }
-        toast("Account Created");
-
-
     };
     return (
         <div className='mx-auto my-5' style={{ maxWidth: '500px' }}>
@@ -91,8 +83,9 @@ const Signup = () => {
                         Please provide your confirm password.
                     </Form.Control.Feedback>
                 </Form.Group>
-                <p className='mt-3'>Are you new to our website? <Link to='/signup'>Please register!</Link></p>
-                {error && <p className="alert alert-danger" role="alert">Error: {error.message}</p>}
+                <p className='mt-3'>Already have an account<Link to='/login' className='text-decoration-none'>Please Login!</Link></p>
+                {error && <p className="alert alert-danger" role="alert">Error: {error?.message}</p>}
+                {errorText && <p className="alert alert-danger" role="alert">Error: {errorText}</p>}
                 <Button variant="primary" type="submit">
                     Login
                 </Button>
