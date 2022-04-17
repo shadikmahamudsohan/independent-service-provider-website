@@ -6,6 +6,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LoadingSpinner from '../../shared/LoadingSpinner/LoadingSpinner';
+import SignInWithGoogle from '../SignInWithGoogle/SignInWithGoogle';
 
 const Login = () => {
     const [validated, setValidated] = useState(false);
@@ -64,7 +65,7 @@ const Login = () => {
         }
     };
     return (
-        <div className='mx-auto mt-5' style={{ maxWidth: '500px', height: '60vh' }}>
+        <div className='mx-auto my-5 px-4 py-5 shadow rounded' style={{ maxWidth: '500px' }}>
             <Form noValidate validated={validated} onSubmit={handleSignup}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -88,6 +89,7 @@ const Login = () => {
                     Login
                 </Button>
             </Form>
+            <SignInWithGoogle />
             <ToastContainer />
         </div>
     );

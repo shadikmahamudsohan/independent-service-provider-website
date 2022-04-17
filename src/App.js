@@ -10,6 +10,7 @@ import Checkout from './pages/home/Checkout/Checkout';
 import Footer from './pages/shared/Footer/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Blog from './pages/Blog/Blog';
+import RequireAuth from './pages/authentication/RequiredAuth/RequiredAuth';
 
 function App() {
   return (
@@ -22,7 +23,9 @@ function App() {
         <Route path='/signup' element={<Signup />} />
         <Route path='/about' element={<About />} />
         <Route path='/blog' element={<Blog />} />
-        <Route path='/checkout' element={<Checkout />} />
+        <Route path='/checkout' element={<RequireAuth>
+          <Checkout />
+        </RequireAuth>} />
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
