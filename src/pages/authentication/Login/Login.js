@@ -17,7 +17,7 @@ const Login = () => {
         signInWithEmailAndPassword,
         user,
         loading,
-        signinError,
+        signInError,
     ] = useSignInWithEmailAndPassword(auth);
     let navigate = useNavigate();
     let location = useLocation();
@@ -85,6 +85,7 @@ const Login = () => {
                 <p className='mt-3'>Are you new to our website? <Link to='/signup' className='text-decoration-none'>Please register!</Link></p>
                 <p className='mt-3'>Forget password? <span onClick={handleResetPassword} className='text-primary' style={{ cursor: 'pointer' }}>Creat a new password!</span></p>
                 {errorText && <p className="alert alert-danger" role="alert">Error: {errorText}</p>}
+                {signInError && <p className="alert alert-danger" role="alert">Error: {signInError?.message}</p>}
                 <Button variant="primary" type="submit">
                     Login
                 </Button>

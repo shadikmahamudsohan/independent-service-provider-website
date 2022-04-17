@@ -1,0 +1,13 @@
+.checkout-container {
+    background-image: url('../../Images/bgimg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    /* color: white; */
+}
+
+.checkout-container form {
+    max-width: 500px;
+
+}
