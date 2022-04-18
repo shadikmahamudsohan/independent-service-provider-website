@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase/firebase.init';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Checkout.css';
 
 const Checkout = () => {
@@ -18,6 +20,12 @@ const Checkout = () => {
         }
 
         setValidated(true);
+        const name = event.target.name.value;
+        const number = event.target.phoneNumber.value;
+        const address = event.target.address.value;
+        if (name && number && address) {
+            toast('thank you for the booking.');
+        }
     };
     return (
         <div className='checkout-container'>
@@ -37,14 +45,15 @@ const Checkout = () => {
                         <Form.Label>Phone Number</Form.Label>
                         <Form.Control className='py-2' required type="number" placeholder="Phone Number" />
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="dateOfBirth">
-                        <Form.Label>Date of birth</Form.Label>
-                        <Form.Control className='py-2' required type="date" placeholder="Date of birth" />
+                    <Form.Group className="mb-3" controlId="address">
+                        <Form.Label>Address</Form.Label>
+                        <Form.Control className='py-2' required type="text" placeholder="Your Address" />
                     </Form.Group>
                     <Button variant="primary" type="submit">
                         Checkout
                     </Button>
                 </Form>
+                <ToastContainer />
             </div>
         </div>
     );

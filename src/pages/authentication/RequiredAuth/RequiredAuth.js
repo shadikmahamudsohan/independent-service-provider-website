@@ -8,7 +8,6 @@ import LoadingSpinner from '../../shared/LoadingSpinner/LoadingSpinner';
 const RequireAuth = ({ children }) => {
     const [user, loading, error] = useAuthState(auth);
     let location = useLocation();
-    console.log(user);
     if (loading) {
         return (
             <div>
