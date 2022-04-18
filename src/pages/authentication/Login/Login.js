@@ -57,7 +57,7 @@ const Login = () => {
 
         if (email) {
             await sendPasswordResetEmail(email);
-            toast('Sent email');
+            toast('Email Sended');
             setErrorText('');
         }
         else {
