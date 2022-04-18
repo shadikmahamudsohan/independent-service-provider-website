@@ -1,6 +1,6 @@
 # Independent BD Doctor
 
-This project was bootstrapped with [https://independent-service-prov-f2cb2.web.app](https://independent-service-prov-f2cb2.web.app).
+Live website link: [https://independent-service-prov-f2cb2.web.app](https://independent-service-prov-f2cb2.web.app).
 
 ## About this website: 
 * This is a website about an independent services of a doctor.
