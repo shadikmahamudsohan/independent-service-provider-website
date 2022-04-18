@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const NotFound = () => {
     const navigate = useNavigate();
     return (
-        <div>
+        <div style={{ height: '70vh' }}>
             <h1 className='text-danger my-3 text-center '>
                 Page Not Found :(
             </h1>
