@@ -16,7 +16,7 @@ const Home = () => {
                             I am a Doctor.
                         </h1>
                         <p>
-                            I am doctor with 10 years of experience. My speciality is a cardiology, but I am also pediatrician and dietician.
+                            I am doctor with 10 years of experience. My speciality is a cardiology.
                         </p>
                         <a href="#services">
                             <button className='btn btn-primary mt-5 px-4 py-2'>My Services<BiDownArrowAlt fontSize="1.5em" /></button>
